@@ -5,6 +5,8 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class workWithPageElements {
     private static String url = "http://www.realmeteo.ru/moscow/1/current";
@@ -23,7 +25,19 @@ public class workWithPageElements {
         return getMeteoData;
     }
 
-    public static Elements getInfFromPage () throws IOException {
-        return getInfFromPagePrivate();
-    }
+       public static void cleanInfOfMeteoData () throws IOException {
+          Pattern pattern = Pattern.compile("[-+]?[0-9][0-9]?[0-9]?[.]?[0-9]?");
+          Matcher matcher = pattern.matcher(getInfFromPagePrivate().toString());
+          String [] columnNames = {"Температура ", "Ощущается, как ", "Атмосферное давление ", "Относительная влажность ", "Скорость ветра "};
+          String [] finalMeteoData = new String [5];
+
+          while (matcher.find()) {
+              int i = 0;
+              finalMeteoData [i] = matcher.group();
+              System.out.println(finalMeteoData [i]);
+              i++;
+           }
+
+
+        }
 }
