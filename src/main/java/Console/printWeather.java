@@ -1,8 +1,12 @@
+package Console;
+
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class printWeather {
+    //Отсюда будем брать значения для окна
+    public static String [] ClonedValuesOfMeteoData = new String[5];
 
     //Получаем чистые значения наших переменных
     public static void  cleanInfOfMeteoData () throws IOException {
@@ -22,10 +26,13 @@ public class printWeather {
         while (matcher.find()) {
 
             valuesOfMeteoData[i] = matcher.group();
+            ClonedValuesOfMeteoData = valuesOfMeteoData;
             //Выводим значения в консоль
             System.out.println(namesOfValues[i]+ valuesOfMeteoData[i]+aboutValues[i]);
             i++;
         }
+
+
 
     }
 }
