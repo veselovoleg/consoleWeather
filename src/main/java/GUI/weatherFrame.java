@@ -17,7 +17,7 @@ public class weatherFrame {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocation(500, 400);
-        frame.setPreferredSize(new Dimension(500, 200));
+        frame.setPreferredSize(new Dimension(200, 200));
         frame.pack();
         frame.setVisible(true);
     }
