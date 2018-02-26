@@ -8,7 +8,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.net.URL;
 
-public class workWithPageElements {
+public class Parsing {
     private static String url = "http://www.realmeteo.ru/moscow/1/current";
 
 

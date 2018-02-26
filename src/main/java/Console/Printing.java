@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class printWeather {
+public class Printing {
     //Отсюда будем брать значения для окна
     public static String [] ClonedValuesOfMeteoData = new String[5];
 
@@ -19,7 +19,7 @@ public class printWeather {
         String[] valuesOfMeteoData = new String[5];
         //Вытягиваем значения температуры и тд
         Pattern pattern = Pattern.compile("[-+]?[0-9][0-9]?[0-9]?[.]?[0-9]?");
-        Matcher matcher = pattern.matcher(workWithPageElements.getInfFromPagePublic().toString());
+        Matcher matcher = pattern.matcher(Parsing.getInfFromPagePublic().toString());
 
         int i = 0;
 

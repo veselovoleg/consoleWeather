@@ -1,14 +1,10 @@
 package GUI;
-import Console.printWeather;
+import Console.Printing;
 import java.awt.Dimension;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 
-
-import static Console.printWeather.ClonedValuesOfMeteoData;
-
-public class weatherFrame {
-    static  String [] valuesForFrame = printWeather.ClonedValuesOfMeteoData.clone();
+public class Frame {
+    static  String [] valuesForFrame = Printing.ClonedValuesOfMeteoData.clone();
 
 
     public static void createWeatherGUI() {
